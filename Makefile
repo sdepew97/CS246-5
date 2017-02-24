@@ -1,12 +1,9 @@
 # Name: Sarah Depew
 
-all: check_ptrs pointers 
+all: check_ptrs
 
 check_ptrs: pointers.o check_ptrs.o
 	gcc -o check_ptrs pointers.o check_ptrs.o -lcheck
-
-pointers: pointers.o
-	gcc -o pointers pointers.o
 
 pointers.o: pointers.c pointers.h
 	gcc -c pointers.c

@@ -101,15 +101,12 @@ int partial_sum(int* p, int* q)
    BLANK otherwise. */
 int check_line(int* start, int step, int n)
 {
-  printf("%d\n", *start); 
-  for(int i=0; i<n/step; i++){
-    printf("%d\n",*(start+step*i)); 
+  //printf("%d\n", *start); 
+  for(int i=0; i<n; i++){
     if((*(start))!=(*(start+(step*i)))){
-      printf("\n"); 
       return BLANK;
     }
-  }
-  printf("\n"); 
+  } 
   return *start; //returns what is at start, which is either X or O or BLANK (this still returns if there is a row, column, or diagonal of blanks)
 }
 
@@ -117,19 +114,66 @@ int check_line(int* start, int step, int n)
    board points to a region of memory containing at least
    n^2 ints. Returns the winner of Tic Tac Toe, or BLANK
    if there is no winner. */
-/*
+
 int tic_tac_toe_winner(int n, int* board)
 {
-  //Ways to win: 
-  //check rows
-  for(int i=0; i<n; i++){
-    // printf("%d", board); 
-    check_line((board+(i*n)), 1, n); //checks each row
-  }
-  //check columns
-  //check diagonal top left to bottom right
-  //check top right to bottom left
+  int val = 0;
+
+  //Ways to win: row, column, diagonals (otherwise you did not win...)
   
-  return 0;
+  //check rows
+  printf("%d\n", *board); 
+  for(int i=0; i<n; i++){ 
+    val =  check_line((board+(i*n)), 1, n); //checks each row
+    if(val){
+      return val;
+    }
+  }
+  
+  //check columns
+  printf("%d\n", *board);
+  for(int i=0; i<n; i++){
+    val =  check_line((board+i), n, n); //checks each column for a solution
+    if(val){
+      return val;
+    }
+  }
+    
+  //check diagonal top left to bottom right
+   printf("%d\n", *board);
+    val =  check_line(board, (n+1), n); //checks the diagonal for a solution
+    if(val){
+      return val;
+    }
+    
+  //check top right to bottom left
+    printf("%d\n", *board);
+    val =  check_line(board+n-1, (n-1), n); //checks the diagonal for a solution
+    if(val){
+      return val;
+    }
+    
+    return 0; //default return value
 }
-*/
+
+int main(void){
+   
+  int board1[3][3] = { {O, O, X},
+		       {X, X, O},
+		       {X, O, X} };
+  int x =  tic_tac_toe_winner(3, (int*)board1);
+
+  
+  int board2[2][2] = { {BLANK, O},
+		       {X, BLANK} };
+  int y = tic_tac_toe_winner(2, (int*)board2);
+  
+  int board3[3][3] = { {X, X, X},
+		       {X, X, O},
+		       {X, O, X} };
+  int z = tic_tac_toe_winner(3, (int*)board3);
+
+  printf("%d %d %d\n", x, y,z);  
+
+  //printf("%d\n", x); 
+}
