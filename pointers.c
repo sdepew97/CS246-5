@@ -13,14 +13,11 @@
    overlaps with the region pointed to by p2 (of length m). Do not
    assume that p2 is greater than p1. */
 bool overlaps(int n, int* p1, int m, int* p2){
-  if((p1+n)<=p2){ //the regions have no overlap at all and p1 starts and ends before p2
+  if((p1+n)<=p2) //the regions have no overlap at all and p1 starts and ends before p2 even starts
       return false;
-  }
-
-  else  if(p2+m<=p1){ //the regions have no overlap at all and p1 starts before p2 ends
+  else  if(p2+m<=p1) //the regions have no overlap at all and p1 starts before p2 ends
       return false;
-  }
-
+  //default is true
   return true;
 }
 
@@ -30,7 +27,7 @@ void minisort(int* a, int* b, int* c)
 {
   int temp = 0;
 
-   printf("\n%d, %d, %d\n", *a, *b, *c);
+  // printf("\n%d, %d, %d\n", *a, *b, *c);
    
   //Do I need to move a?
   if(*a<=*b){
@@ -56,7 +53,7 @@ void minisort(int* a, int* b, int* c)
       *a = temp;
     
   }
-    printf("\n%d, %d, %d\n", *a, *b, *c);
+  // printf("\n%d, %d, %d\n", *a, *b, *c);
  
   //Do I need to move b? a is in the correct location, now
   if(*b<=*c){
@@ -69,7 +66,7 @@ void minisort(int* a, int* b, int* c)
      *c = *b;
      *b = temp;
   }
-   printf("\n%d, %d, %d\n", *a, *b, *c);
+  //printf("\n%d, %d, %d\n", *a, *b, *c);
 }
 
 /* Computes the sum of the ints that sit in memory between p
@@ -78,12 +75,9 @@ void minisort(int* a, int* b, int* c)
 int partial_sum(int* p, int* q)
 {
   int sum = 0;
-  //printf("%d\n", *p);
-  //printf("%d\n", *q);
-  
+
+  //adds all the values of the memory location to sum
   for(int* i=p; i<q; i++){
-    //printf("%d", *i); 
-    //printf("%d\n", *p); 
     sum+=*i;
   }
   return sum;
@@ -109,7 +103,7 @@ int tic_tac_toe_winner(int n, int* board)
   return 0;
 }
 
-
+/*
 int main(void){
   int x = 4,  y = 1,  z = 5;
    minisort(&x, &y, &z);
@@ -122,4 +116,4 @@ int main(void){
   return 0; 
 }
  
-
+*/
