@@ -12,8 +12,7 @@
 /* Returns whether or not the region pointed to by p1 (of length n)
    overlaps with the region pointed to by p2 (of length m). Do not
    assume that p2 is greater than p1. */
-bool overlaps(int n, int* p1, int m, int* p2)
-{
+bool overlaps(int n, int* p1, int m, int* p2){
   if((p1+n)<=p2){ //the regions have no overlap at all and p1 starts and ends before p2
       return false;
   }
@@ -24,29 +23,6 @@ bool overlaps(int n, int* p1, int m, int* p2)
 
   return true;
 }
-
-  /*
-  if(p1<p2){
-    
-    else{
-      return true;
-    }
-  }
-
-  else if(p1==p2){
-    return true; 
-  }
-
-  else{ //p1>p2
-    
-    else{
-      return false;
-    }
-  }
-  return false;
- 
-}
- */
 
 /* Changes the value in *a, *b, and *c so that *a, *b, and *c are
    in non-decreasing order. */
