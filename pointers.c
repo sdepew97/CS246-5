@@ -25,6 +25,62 @@ bool overlaps(int n, int* p1, int m, int* p2){
    in non-decreasing order. */
 void minisort(int* a, int* b, int* c)
 {
+  bool sorted = false;
+  int smallest_value = *a;
+  int temp = 0; 
+  
+  while(!sorted){
+    if(smallest_value>*b && smallest_value>*c){
+      // a is largest, so put it in place of c
+      temp = *a;
+      *a = *c;
+      *c = temp;
+      if(*a<=*b){
+	sorted = true;
+      }
+      else{
+	// a>b, but a<c&&b<c
+	 temp = *a;
+	 *a = *b;
+	 *b = temp;
+	 sorted = true; 
+      }
+    }
+    else if(smallest_value>*b&&smallest_value<=*c){
+      //a is larger than b, but smaller than c
+      //need to switch a and b to be sorted
+      temp = *a;
+      *a = *b;
+      *b = temp;
+      sorted = true;
+    }
+    else if(smallest_value>*c && smallest_value<=*b){
+      //a is smaller than b but larger than c so need to switch a and c and then switch b and c
+      temp = *c;
+      *c = *a;
+      *a = temp;
+      
+      temp = *b;
+      *b = *c;
+      *c = temp;
+      sorted = true;
+    }
+    else{
+      //anything else that fails is starting with a<b and a<c, so a is smallest
+      if(*b<=*c){
+	sorted = true;
+      }
+      else{
+	//need to switch b and c
+	temp = *b;
+	*b = *c;
+	*c = temp;
+	sorted = true; 
+      }
+    }
+  }
+    
+  /*
   int temp = 0;
 
   // printf("\n%d, %d, %d\n", *a, *b, *c);
@@ -67,6 +123,7 @@ void minisort(int* a, int* b, int* c)
      *b = temp;
   }
   //printf("\n%d, %d, %d\n", *a, *b, *c);
+  */
 }
 
 /* Computes the sum of the ints that sit in memory between p

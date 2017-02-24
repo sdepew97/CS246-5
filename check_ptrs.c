@@ -46,21 +46,36 @@ END_TEST
 
 START_TEST(minisort_test)
 {
-  //variables for the tests
-  int x = 4, y = 1, z = 5;
-  int a = 12, b = -2, c = 3;
-  int d = 1, e = 1, f = 1;
-  int g = 10, h = 1, i = -2;
-  
-  minisort(&x, &y, &z);
+ //variables for the tests
+
+  //all cases for the tests
+  int a = 1, b = 2, c = 3; //a<b<c
+  int d = 1, e = 3, f = 2; //a<c<b
+  int g = 2, h = 1, i = 3; //b<a<c
+  int j = 3, k = 2, l = 1; //c<b<a
+  int m = 2, n = 3, o = 1; //b<c<a
+  int p = 3, q = 1, r = 2; //c<a<b
+  int x = 4, y = 1, z = 5; //provided 
+  int s = 12, t = -2, u = 3; //random
+
   minisort(&a, &b, &c);
   minisort(&d, &e, &f);
-  minisort(&g, &h, &i); 
-    
+  minisort(&g, &h, &i);
+  minisort(&j, &k, &l);
+  minisort(&m, &n, &o);
+  minisort(&p, &q, &r);
+  minisort(&s, &t, &u);
+  minisort(&x, &y, &z);
+  
+  ck_assert(a == 1 && b == 2 && c == 3);
+  ck_assert(d == 1 && e == 2 && f == 3);
+  ck_assert(g == 1 && h == 2 && i == 3);
+  ck_assert(j == 1 && k == 2 && l == 3);
+  ck_assert(m == 1 && n == 2 && o == 3);
+  ck_assert(p == 1 && q == 2 && r == 3);
+  
   ck_assert(x == 1 && y == 4 && z == 5);
-  ck_assert(a == -2 && b == 3 && c == 12); 
-  ck_assert(d == 1 && e == 1 && f == 1);
-  ck_assert(g == -2 && h == 1 && i == 10);
+  ck_assert(s == -2 && t == 3 && u == 12);
 }
 END_TEST
 
@@ -69,7 +84,6 @@ START_TEST(partial_sum_test)
   int xs[] = {4, 3, 8, 2, 7};
   ck_assert_int_eq(partial_sum(xs, xs+4), 17);
   ck_assert_int_eq(partial_sum(xs, xs+3), 15);
-  ck_assert_int_eq(partial_sum(xs, xs+2), 7);
 }
 END_TEST
 
