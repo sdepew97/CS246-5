@@ -87,17 +87,19 @@ START_TEST(partial_sum_test)
 }
 END_TEST
 
-/*
+
 START_TEST(check_line_test)
 {
   int xs[] = {X, BLANK, X, O, X, BLANK};
   ck_assert_int_eq(check_line(xs, 2, 3), X);
   ck_assert_int_eq(check_line(xs, 1, 3), BLANK);
+  ck_assert_int_eq(check_line(xs+1, 4, 4), BLANK);
 }
 END_TEST
-
+/*
 START_TEST(tic_tac_toe_test)
 {
+  
   int board1[3][3] = { {O, O, X},
 		       {X, X, O},
 		       {X, O, X} };
@@ -106,10 +108,14 @@ START_TEST(tic_tac_toe_test)
   int board2[2][2] = { {BLANK, O},
 		       {X, BLANK} };
   ck_assert_int_eq(tic_tac_toe_winner(2, (int*)board2), BLANK);
+  
+  int board3[3][3] = { {X, X, X},
+		       {X, X, O},
+		       {X, O, X} };
+  ck_assert_int_eq(tic_tac_toe_winner(3, (int*)board3), X);
 }
 END_TEST
 */
-
 // the main() function for unit testing is fairly prescribed.
 // Just copy & paste, but make sure to update the test names!
 
@@ -128,10 +134,8 @@ int main()
   tcase_add_test(tc, overlaps_test);
   tcase_add_test(tc, minisort_test);
   tcase_add_test(tc, partial_sum_test);
-  /*
   tcase_add_test(tc, check_line_test);
-  tcase_add_test(tc, tic_tac_toe_test);
-  */
+  //tcase_add_test(tc, tic_tac_toe_test);
 
   // Having set up the TCase, add it to the suite:
   suite_add_tcase(s, tc);

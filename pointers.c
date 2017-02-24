@@ -79,51 +79,6 @@ void minisort(int* a, int* b, int* c)
       }
     }
   }
-    
-  /*
-  int temp = 0;
-
-  // printf("\n%d, %d, %d\n", *a, *b, *c);
-   
-  //Do I need to move a?
-  if(*a<=*b){
-    if(*a<=*c){
-      //no need to move the value a references
-    }
-    else{
-      temp = *a;
-      *a = *c;
-      *c = temp;
-    }
-  }
-
-  else if(*a>*c){
-     temp = *c;
-     *c = *a;
-     *a = temp;
-  }
-  
-  else{
-      temp = *b;
-      *b = *a;
-      *a = temp;
-    
-  }
-  // printf("\n%d, %d, %d\n", *a, *b, *c);
- 
-  //Do I need to move b? a is in the correct location, now
-  if(*b<=*c){
-    //there is not need to do anything
-  }
-  
-  else{
-  //Do I need to move c?
-    temp = *c;
-     *c = *b;
-     *b = temp;
-  }
-  //printf("\n%d, %d, %d\n", *a, *b, *c);
-  */
 }
 
 /* Computes the sum of the ints that sit in memory between p
@@ -146,31 +101,35 @@ int partial_sum(int* p, int* q)
    BLANK otherwise. */
 int check_line(int* start, int step, int n)
 {
-  /* WRITE THIS FUNCTION */
-  return 0;
+  printf("%d\n", *start); 
+  for(int i=0; i<n/step; i++){
+    printf("%d\n",*(start+step*i)); 
+    if((*(start))!=(*(start+(step*i)))){
+      printf("\n"); 
+      return BLANK;
+    }
+  }
+  printf("\n"); 
+  return *start; //returns what is at start, which is either X or O or BLANK (this still returns if there is a row, column, or diagonal of blanks)
 }
 
 /* Check for a winner of Tic Tac Toe. Precondition:
    board points to a region of memory containing at least
    n^2 ints. Returns the winner of Tic Tac Toe, or BLANK
    if there is no winner. */
+/*
 int tic_tac_toe_winner(int n, int* board)
 {
-  /* WRITE THIS FUNCTION */
+  //Ways to win: 
+  //check rows
+  for(int i=0; i<n; i++){
+    // printf("%d", board); 
+    check_line((board+(i*n)), 1, n); //checks each row
+  }
+  //check columns
+  //check diagonal top left to bottom right
+  //check top right to bottom left
+  
   return 0;
 }
-
-/*
-int main(void){
-  int x = 4,  y = 1,  z = 5;
-   minisort(&x, &y, &z);
- 
-  
-  int xs[] = {4, 3, 8, 2, 7};
-  int f = partial_sum(xs, xs+4);
-  printf("%d\n", f);
-  
-  return 0; 
-}
- 
 */
