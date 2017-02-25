@@ -122,7 +122,7 @@ int tic_tac_toe_winner(int n, int* board)
   //Ways to win: row, column, diagonals (otherwise you did not win...)
   
   //check rows
-  printf("%d\n", *board); 
+  //printf("%d\n", *board); 
   for(int i=0; i<n; i++){ 
     val =  check_line((board+(i*n)), 1, n); //checks each row
     if(val){
@@ -131,7 +131,7 @@ int tic_tac_toe_winner(int n, int* board)
   }
   
   //check columns
-  printf("%d\n", *board);
+  //printf("%d\n", *board);
   for(int i=0; i<n; i++){
     val =  check_line((board+i), n, n); //checks each column for a solution
     if(val){
@@ -140,14 +140,14 @@ int tic_tac_toe_winner(int n, int* board)
   }
     
   //check diagonal top left to bottom right
-   printf("%d\n", *board);
+  //printf("%d\n", *board);
     val =  check_line(board, (n+1), n); //checks the diagonal for a solution
     if(val){
       return val;
     }
     
   //check top right to bottom left
-    printf("%d\n", *board);
+    //printf("%d\n", *board);
     val =  check_line(board+n-1, (n-1), n); //checks the diagonal for a solution
     if(val){
       return val;
@@ -156,6 +156,7 @@ int tic_tac_toe_winner(int n, int* board)
     return 0; //default return value
 }
 
+/*
 int main(void){
    
   int board1[3][3] = { {O, O, X},
@@ -177,3 +178,4 @@ int main(void){
 
   //printf("%d\n", x); 
 }
+*/

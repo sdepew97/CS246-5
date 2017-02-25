@@ -95,6 +95,12 @@ START_TEST(tic_tac_toe_test)
 		       {X, X, O},
 		       {X, O, X} };
   ck_assert_int_eq(tic_tac_toe_winner(3, (int*)board3), X);
+
+  int board4[4][4] = { {O, X, X, X},
+		       {O, O, X, X},
+		       {X, X, O, X},
+                       {O, X, X, O} };
+  ck_assert_int_eq(tic_tac_toe_winner(4, (int*)board4), O);
 }
 END_TEST
 
