@@ -100,8 +100,7 @@ int partial_sum(int* p, int* q)
    of Tic Tac Toe. Returns X or O if there is a winner, or
    BLANK otherwise. */
 int check_line(int* start, int step, int n)
-{
-  //printf("%d\n", *start); 
+{ 
   for(int i=0; i<n; i++){
     if((*(start))!=(*(start+(step*i)))){
       return BLANK;
@@ -155,27 +154,3 @@ int tic_tac_toe_winner(int n, int* board)
     
     return 0; //default return value
 }
-
-/*
-int main(void){
-   
-  int board1[3][3] = { {O, O, X},
-		       {X, X, O},
-		       {X, O, X} };
-  int x =  tic_tac_toe_winner(3, (int*)board1);
-
-  
-  int board2[2][2] = { {BLANK, O},
-		       {X, BLANK} };
-  int y = tic_tac_toe_winner(2, (int*)board2);
-  
-  int board3[3][3] = { {X, X, X},
-		       {X, X, O},
-		       {X, O, X} };
-  int z = tic_tac_toe_winner(3, (int*)board3);
-
-  printf("%d %d %d\n", x, y,z);  
-
-  //printf("%d\n", x); 
-}
-*/

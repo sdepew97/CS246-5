@@ -69,7 +69,6 @@ START_TEST(partial_sum_test)
 }
 END_TEST
 
-
 START_TEST(check_line_test)
 {
   int xs[] = {X, BLANK, X, O, X, BLANK};
@@ -96,11 +95,86 @@ START_TEST(tic_tac_toe_test)
 		       {X, O, X} };
   ck_assert_int_eq(tic_tac_toe_winner(3, (int*)board3), X);
 
+  //test winning with a left,top diagonal
   int board4[4][4] = { {O, X, X, X},
 		       {O, O, X, X},
 		       {X, X, O, X},
                        {O, X, X, O} };
   ck_assert_int_eq(tic_tac_toe_winner(4, (int*)board4), O);
+
+  //test winning with a right, top diagonal
+  int board5[4][4] = { {O, X, X, X},
+		       {O, O, X, X},
+		       {X, X, O, O},
+                       {X, X, O, X} };
+  ck_assert_int_eq(tic_tac_toe_winner(4, (int*)board5), X);
+  
+  //test winning with a top row
+  int board6[4][4] = { {X, X, X, X},
+		       {O, O, O, X},
+		       {X, X, O, O},
+                       {X, O, X, X} };
+  ck_assert_int_eq(tic_tac_toe_winner(4, (int*)board6), X);
+
+   //test winning with a top row
+  int board7[4][4] = { {O, X, X, X},
+		       {O, O, O, O},
+		       {X, X, O, O},
+                       {X, O, X, X} };
+  ck_assert_int_eq(tic_tac_toe_winner(4, (int*)board7), O);
+
+   //test winning with a middle row
+  int board8[4][4] = { {X, X, X, X},
+		       {O, O, O, X},
+		       {X, X, X, X},
+                       {X, O, X, O} };
+  ck_assert_int_eq(tic_tac_toe_winner(4, (int*)board8), X);
+
+   //test winning with a bottom row
+  int board9[4][4] = { {X, X, X, X},
+		       {O, O, O, X},
+		       {X, X, O, O},
+                       {X, O, X, X} };
+  ck_assert_int_eq(tic_tac_toe_winner(4, (int*)board9), X);
+
+   //test winning with first column
+  int board10[4][4] = {{O, X, X, X},
+		       {O, O, O, X},
+		       {O, X, O, O},
+                       {O, O, X, X} };
+  ck_assert_int_eq(tic_tac_toe_winner(4, (int*)board10), O);
+
+   //test winning with first column
+  int board11[4][4] = {{O, X, X, X},
+		       {O, O, O, X},
+		       {O, X, O, O},
+                       {O, O, X, X} };
+  ck_assert_int_eq(tic_tac_toe_winner(4, (int*)board11), O);
+
+  //test winning with second column
+  int board12[4][4] = {{O, X, X, X},
+		       {X, X, O, X},
+		       {O, X, O, O},
+                       {O, X, X, X} };
+  ck_assert_int_eq(tic_tac_toe_winner(4, (int*)board12), X);
+
+   //test winning with third column
+  int board13[4][4] = {{O, X, O, X},
+		       {O, O, O, X},
+		       {O, X, O, O},
+                       {X, O, O, X} };
+  ck_assert_int_eq(tic_tac_toe_winner(4, (int*)board13), O);
+
+   //test winning with last column
+  int board14[4][4] = {{O, X, X, X},
+		       {X, O, O, X},
+		       {O, X, O, X},
+                       {O, O, X, X} };
+  ck_assert_int_eq(tic_tac_toe_winner(4, (int*)board14), X);
+  
+  int board15[2][2] = {{X, O},
+		       {X, BLANK}};
+  ck_assert_int_eq(tic_tac_toe_winner(2, (int*)board15), X);
 }
 END_TEST
 
