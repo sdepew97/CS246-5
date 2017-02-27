@@ -23,8 +23,7 @@ bool overlaps(int n, int* p1, int m, int* p2){
 
 /* Changes the value in *a, *b, and *c so that *a, *b, and *c are
    in non-decreasing order. */
-void minisort(int* a, int* b, int* c)
-{
+void minisort(int* a, int* b, int* c){
   bool sorted = false;
   int smallest_value = *a;
   int temp = 0; 
@@ -86,12 +85,14 @@ void minisort(int* a, int* b, int* c)
    after p -- that is, q >= p. */
 int partial_sum(int* p, int* q)
 {
+  //sum variable to store the sum of the values
   int sum = 0;
 
   //adds all the values of the memory location to sum
   for(int* i=p; i<q; i++){
     sum+=*i;
   }
+  //returns the sum and returns 0 if the for loop does not run
   return sum;
 }
 
@@ -100,12 +101,16 @@ int partial_sum(int* p, int* q)
    of Tic Tac Toe. Returns X or O if there is a winner, or
    BLANK otherwise. */
 int check_line(int* start, int step, int n)
-{ 
+{
+  //for loop that runs through n array elements and checks that the previous and the current are the same 
   for(int i=0; i<n; i++){
+    //printf("Value being checked: %d\n",(*(start+(step*i))));
+    //if statement that checks if the values are the same and fails if not
     if((*(start))!=(*(start+(step*i)))){
       return BLANK;
     }
-  } 
+  }
+  //the code reaches this point if all the values were the same
   return *start; //returns what is at start, which is either X or O or BLANK (this still returns if there is a row, column, or diagonal of blanks)
 }
 
@@ -116,15 +121,15 @@ int check_line(int* start, int step, int n)
 
 int tic_tac_toe_winner(int n, int* board)
 {
+  //variable that stores the return value of the winner of the game
   int val = 0;
 
   //Ways to win: row, column, diagonals (otherwise you did not win...)
   
-  //check rows
-  //printf("%d\n", *board); 
+  //check row 
   for(int i=0; i<n; i++){ 
-    val =  check_line((board+(i*n)), 1, n); //checks each row
-    if(val){
+    val =  check_line((board+(i*n)), 1, n); //checks each row of the board for a winner
+    if(val){ //this if makes sure that the winner is not returned if it is a blank
       return val;
     }
   }
@@ -133,7 +138,7 @@ int tic_tac_toe_winner(int n, int* board)
   //printf("%d\n", *board);
   for(int i=0; i<n; i++){
     val =  check_line((board+i), n, n); //checks each column for a solution
-    if(val){
+    if(val){ //this if makes sure that the winner is not returned if it is a blank
       return val;
     }
   }
@@ -141,16 +146,16 @@ int tic_tac_toe_winner(int n, int* board)
   //check diagonal top left to bottom right
   //printf("%d\n", *board);
     val =  check_line(board, (n+1), n); //checks the diagonal for a solution
-    if(val){
+    if(val){ //this if makes sure that the winner is not returned if it is a blank
       return val;
     }
     
   //check top right to bottom left
     //printf("%d\n", *board);
     val =  check_line(board+n-1, (n-1), n); //checks the diagonal for a solution
-    if(val){
+    if(val){ //this if makes sure that the winner is not returned if it is a blank
       return val;
     }
     
-    return 0; //default return value
+    return 0; //default return value, since the default is that there are blanks and nobody won
 }

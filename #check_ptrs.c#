@@ -23,7 +23,7 @@ START_TEST(overlaps_test)
   ck_assert(overlaps(5, a, 2, a + 3));      // these regions overlap
   ck_assert(overlaps(5, a, 4, a + 1));      // these regions overlap 
   ck_assert(!overlaps(3, a, 2, a + 3));     // these touch, but don't overlap
-}
+\}
 END_TEST
 
 START_TEST(minisort_test)
