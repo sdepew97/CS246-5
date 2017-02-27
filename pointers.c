@@ -23,6 +23,7 @@ bool overlaps(int n, int* p1, int m, int* p2){
 
 /* Changes the value in *a, *b, and *c so that *a, *b, and *c are
    in non-decreasing order. */
+/*
 void minisort(int* a, int* b, int* c){
   bool sorted = false;
   int smallest_value = *a;
@@ -78,6 +79,30 @@ void minisort(int* a, int* b, int* c){
       }
     }
   }
+}
+*/
+
+void minisort(int* a, int* b, int* c){
+  int temp = 0; //temporary variable that stores the value for exchanging
+  if(*a>*b){
+    //switch a and b
+     temp = *a;
+      *a = *b;
+      *b = temp;
+  }
+  if(*b>*c){
+    //switch b and c
+    temp = *b;
+    *b = *c;
+    *c = temp;
+  }
+  if(*a>*b){
+    //switch a and b//switch a and b
+    temp = *a;
+    *a = *b;
+    *b = temp;
+  }
+  //Since there are only three values, they have to be sorted, now :)
 }
 
 /* Computes the sum of the ints that sit in memory between p
