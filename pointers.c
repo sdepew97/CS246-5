@@ -17,7 +17,7 @@ bool overlaps(int n, int* p1, int m, int* p2){
       return false;
   else  if(p2+m<=p1) //the regions have no overlap at all and p1 starts before p2 ends
       return false;
-  //default is true
+  //default is true, since the regions overlap in all other cases
   return true;
 }
 
