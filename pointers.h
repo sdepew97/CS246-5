@@ -19,6 +19,8 @@ void minisort(int* a, int* b, int* c);
    after p -- that is, q >= p. */
 int partial_sum(int* p, int* q);
 
+void swap(int* x, int* y); 
+
 // constants for Tic Tac Toe problems
 #define BLANK 0
 #define X     1

@@ -23,7 +23,7 @@ START_TEST(overlaps_test)
   ck_assert(overlaps(5, a, 2, a + 3));      // these regions overlap
   ck_assert(overlaps(5, a, 4, a + 1));      // these regions overlap 
   ck_assert(!overlaps(3, a, 2, a + 3));     // these touch, but don't overlap
-\}
+}
 END_TEST
 
 START_TEST(minisort_test)
@@ -69,8 +69,7 @@ START_TEST(partial_sum_test)
 }
 END_TEST
 
-START_TEST(check_line_test)
-{
+START_TEST(check_line_test){
   int xs[] = {X, BLANK, X, O, X, BLANK};
   int xs_2[] = {X, BLANK, X, O, O, BLANK};
   ck_assert_int_eq(check_line(xs, 2, 3), X);
@@ -80,8 +79,7 @@ START_TEST(check_line_test)
 }
 END_TEST
 
-START_TEST(tic_tac_toe_test)
-{
+START_TEST(tic_tac_toe_test){
   
   int board1[3][3] = { {O, O, X},
 		       {X, X, O},
@@ -179,11 +177,6 @@ START_TEST(tic_tac_toe_test)
   ck_assert_int_eq(tic_tac_toe_winner(2, (int*)board15), X);
 }
 END_TEST
-
-
-// the main() function for unit testing is fairly prescribed.
-// Just copy & paste, but make sure to update the test names!
-
 
 int main()
 {
