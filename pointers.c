@@ -1,7 +1,7 @@
 /* pointers.c
 
    Name: Sarah Depew
-   Resources used (websites, books other than our texts, peers): TA 
+   Resources used (websites, books other than our texts, peers): TA, Trista and Wenqi (to discuss sorting problem)  
 
 */
 

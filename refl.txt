@@ -3,8 +3,25 @@ Assignment 5 reflections.
 Please answer the questions below:
 
 1. How did this assignment go for you? (Please write several sentences.)
+
+This assignment went quite well for me. A few of the problems were difficult, but this is probably because pointers are quite new for me. However, I feel quite good about the assignment and feel like my ability to think about problems algorithmically is improving. 
+
 2. What was hard about this assignment?
+
+Pointers are quite new and so thinking in this new manner was difficult.
+ 
 3. What would you like to know more about?
+
+I would like to know more about why pointers are so useful. I have experienced why they are useful somewhat, but would like to know more. 
+
 4. What resources (other than our book) did you use (e.g., website links)?
+
+I used the TA and discussed the sort problem with a few classmates. 
+
 5. What collaborators did you work with to discuss the problems?
+
+I talked with the TA and Trista and Wenqi. 
+
 6. How long did this assignment take you? (Do not include time spent on the readings.)
+
+This assignment took me about 8-10 hours, including two TA sessions and working on the problems a few different times. 
