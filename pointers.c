@@ -87,8 +87,7 @@ int check_line(int* start, int step, int n){
    n^2 ints. Returns the winner of Tic Tac Toe, or BLANK
    if there is no winner. */
 
-int tic_tac_toe_winner(int n, int* board)
-{
+int tic_tac_toe_winner(int n, int* board){
   //variable that stores the return value of the winner of the game
   int val = 0;
 
@@ -96,7 +95,7 @@ int tic_tac_toe_winner(int n, int* board)
   
   //check all rows 
   for(int i=0; i<n; i++){ 
-    val =  check_line((board+(i*n)), 1, n); //checks each row of the board for a winner
+    val = check_line((board+(i*n)), 1, n); //checks each row of the board for a winner
     if(val){ //this if makes sure that the winner is not returned if it is a blank
       return val;
     }
@@ -104,20 +103,20 @@ int tic_tac_toe_winner(int n, int* board)
   
   //check all columns
   for(int i=0; i<n; i++){
-    val =  check_line((board+i), n, n); //checks each column for a solution
+    val = check_line((board+i), n, n); //checks each column for a solution
     if(val){ //this if makes sure that the winner is not returned if it is a blank
       return val;
     }
   }
 
   //check diagonal top left to bottom right
-  val =  check_line(board, (n+1), n); //checks the diagonal for a solution
+  val = check_line(board, (n+1), n); //checks the diagonal for a solution
   if(val){ //this if makes sure that the winner is not returned if it is a blank
     return val;
   }
    
   //check top right to bottom left
-  val =  check_line(board+n-1, (n-1), n); //checks the diagonal for a solution
+  val = check_line(board+n-1, (n-1), n); //checks the diagonal for a solution
   if(val){ //this if makes sure that the winner is not returned if it is a blank
     return val;
   }
