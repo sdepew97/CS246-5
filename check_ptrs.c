@@ -10,8 +10,7 @@
 
 #include "pointers.h"
 
-START_TEST(overlaps_test)
-{
+START_TEST(overlaps_test){
 	//arrays used for checking overlaps
 	int a[5];
 	int b[5];
@@ -27,8 +26,7 @@ START_TEST(overlaps_test)
 }
 END_TEST
 
-START_TEST(minisort_test)
-{
+START_TEST(minisort_test){
  	//variables for the tests with cases to the right
  	 int a = 1, b = 2, c = 3; //a<b<c
  	 int d = 1, e = 3, f = 2; //a<c<b
@@ -61,8 +59,7 @@ START_TEST(minisort_test)
 }
 END_TEST
 
-START_TEST(partial_sum_test)
-{
+START_TEST(partial_sum_test){
 	//array used for checking the partial sum is correct
   	int xs[] = {4, 3, 8, 2, 7};
   	
@@ -165,29 +162,28 @@ START_TEST(tic_tac_toe_test){
 			     {O, X, X, X} };
 	ck_assert_int_eq(tic_tac_toe_winner(4, (int*)board12), X);
 
-   //test winning with third column
+	//test winning with third column
 	int board13[4][4] = {{O, X, O, X},
 			     {O, O, O, X},
 			     {O, X, O, O},
 			     {X, O, O, X} };
 	ck_assert_int_eq(tic_tac_toe_winner(4, (int*)board13), O);
 
-   //test winning with last column
+	//test winning with last column
 	int board14[4][4] = {{O, X, X, X},
 			     {X, O, O, X},
 			     {O, X, O, X},
 			     {O, O, X, X} };
 	ck_assert_int_eq(tic_tac_toe_winner(4, (int*)board14), X);
-  
-  //test winning with a blank, but a column of solutions
+
+	//test winning with a blank, but a column of solutions
 	int board15[2][2] = {{X, O},
 			     {X, BLANK}};
 	ck_assert_int_eq(tic_tac_toe_winner(2, (int*)board15), X);
 }
 END_TEST
 
-int main()
-{
+int main(){
  
   // `check` allows for multiple test suites, but we'll always
   // just have one, called "main"

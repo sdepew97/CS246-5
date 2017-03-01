@@ -1,7 +1,7 @@
 /* pointers.c
 
    Name: Sarah Depew
-   Resources used (websites, books other than our texts, peers): TA, Trista and Wenqi (to discuss sorting problem)  
+   Resources used (websites, books other than our texts, peers): TA, Trista and Wenqi (to discuss sorting problem very briefly)  
 
 */
 
@@ -37,10 +37,12 @@ void minisort(int* a, int* b, int* c){
     //swap a and b
     swap(a,b);
   }
-  //Since there are only three values, they have to be sorted, now since this code accounts for the worst case
+  //Since there are only three values, they have to be sorted, now since this code accounts for the worst case of completely decreasingly-ordered elements
 }
 
-//function for swapping values
+/* This function takes in two integer pointers and then subsequently 
+   utilizes the two pointers to swap the integer values pointed to by each. 
+   This function is used as a helper function for partial_sum(). */
 void swap(int* x, int* y){
   int temp = 0; 
   temp = *x;

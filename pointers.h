@@ -20,8 +20,8 @@ void minisort(int* a, int* b, int* c);
 int partial_sum(int* p, int* q);
 
 /* This function takes in two integer pointers and then subsequently 
-	utilizes the two pointers to swap the integer values pointed to by each. 
-	This function is used as a helper function for partial_sum(). */
+utilizes the two pointers to swap the integer values pointed to by each. 
+This function is used as a helper function for partial_sum(). */
 void swap(int* x, int* y); 
 
 // constants for Tic Tac Toe problems
