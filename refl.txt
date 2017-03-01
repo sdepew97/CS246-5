@@ -8,7 +8,7 @@ This assignment went quite well for me. A few of the problems were difficult, bu
 
 2. What was hard about this assignment?
 
-Pointers are quite new and so thinking in this new manner was difficult.
+Pointers are quite new and so thinking in this new manner was difficult. However, by the end of the assignment, my abilities improved. 
  
 3. What would you like to know more about?
 
@@ -16,12 +16,12 @@ I would like to know more about why pointers are so useful. I have experienced w
 
 4. What resources (other than our book) did you use (e.g., website links)?
 
-I used the TA and discussed the sort problem with a few classmates. 
+I used the TA and discussed the sort problem very briefly with two classmates. 
 
 5. What collaborators did you work with to discuss the problems?
 
-I talked with the TA and Trista and Wenqi. 
+I talked with the TA, Trista, and Wenqi. 
 
 6. How long did this assignment take you? (Do not include time spent on the readings.)
 
-This assignment took me about 8-10 hours, including two TA sessions and working on the problems a few different times. 
+This assignment took me about 8-10 hours, including two TA sessions, your office hours, and working on the problems a few different times in a few different ways. Additionally, it took a good amount of time to think through and to write the tests. 
