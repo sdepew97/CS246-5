@@ -15,7 +15,7 @@
 bool overlaps(int n, int* p1, int m, int* p2){
   if((p1+n)<=p2) //the regions have no overlap at all and p1 starts and ends before p2 even starts
       return false;
-  else  if(p2+m<=p1) //the regions have no overlap at all and p1 starts before p2 ends
+  else if(p2+m<=p1) //the regions have no overlap at all and p1 starts before p2 ends
       return false;
   //default is true, since the regions overlap in all other cases
   return true;
@@ -44,6 +44,7 @@ void minisort(int* a, int* b, int* c){
    utilizes the two pointers to swap the integer values pointed to by each. 
    This function is used as a helper function for partial_sum(). */
 void swap(int* x, int* y){
+  //temporary variable to store value to be swapped
   int temp = 0; 
   temp = *x;
   *x = *y;
@@ -72,7 +73,6 @@ int partial_sum(int* p, int* q){
 int check_line(int* start, int step, int n){
   //for loop that runs through n array elements and checks that the previous and the current are the same 
   for(int i=1; i<n; i++){
-    //printf("Value being checked: %d\n",(*(start+(step*i))));
     //if statement that checks if the values are the same and fails if not
     if((*(start))!=(*(start+(step*i)))){
       return BLANK;
@@ -94,7 +94,7 @@ int tic_tac_toe_winner(int n, int* board)
 
   //Ways to win: row, column, diagonals (otherwise you did not win...)
   
-  //check row 
+  //check all rows 
   for(int i=0; i<n; i++){ 
     val =  check_line((board+(i*n)), 1, n); //checks each row of the board for a winner
     if(val){ //this if makes sure that the winner is not returned if it is a blank
@@ -102,28 +102,25 @@ int tic_tac_toe_winner(int n, int* board)
     }
   }
   
-  //check columns
-  //printf("%d\n", *board);
+  //check all columns
   for(int i=0; i<n; i++){
     val =  check_line((board+i), n, n); //checks each column for a solution
     if(val){ //this if makes sure that the winner is not returned if it is a blank
       return val;
     }
   }
-    
+
   //check diagonal top left to bottom right
-  //printf("%d\n", *board);
-    val =  check_line(board, (n+1), n); //checks the diagonal for a solution
-    if(val){ //this if makes sure that the winner is not returned if it is a blank
-      return val;
-    }
-    
+  val =  check_line(board, (n+1), n); //checks the diagonal for a solution
+  if(val){ //this if makes sure that the winner is not returned if it is a blank
+    return val;
+  }
+   
   //check top right to bottom left
-    //printf("%d\n", *board);
-    val =  check_line(board+n-1, (n-1), n); //checks the diagonal for a solution
-    if(val){ //this if makes sure that the winner is not returned if it is a blank
-      return val;
-    }
-    
-    return 0; //default return value, since the default is that there are blanks and nobody won
+  val =  check_line(board+n-1, (n-1), n); //checks the diagonal for a solution
+  if(val){ //this if makes sure that the winner is not returned if it is a blank
+    return val;
+  }
+ 
+   return 0; //default return value, since the default is that there are blanks and nobody won
 }
